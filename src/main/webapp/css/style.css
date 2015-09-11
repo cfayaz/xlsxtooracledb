@@ -1,0 +1,107 @@
+@font-face {
+    font-family: Neuropol;
+    src: url('neuropol.ttf');
+}
+header {
+    height:90px;
+    background:tomato;
+    border:1px solid #CCC;
+    width:100%;
+    margin:0px auto;
+}
+
+header h1{
+	font-size:50;
+	font-family: Neuropol;
+	text-align: center;
+	color: white;
+}
+body{
+	color: #ff6347;
+
+}
+.fileBox{
+	
+	width:750px;
+	height: 250px;
+	margin: auto;
+	margin-top: 15px;
+	border:2px solid #ff6347;
+	padding-left: 3px;
+	text-align: center;
+	font-size: 25px;
+}
+
+input[type="file"]#fileUploadBox {
+  /* Note: display:none on the input won't trigger the click event in WebKit.
+     Setting visibility to hidden and width 0 works.*/
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+#progress-bar {	
+
+	background-color: #ff6347;
+	height:20px;
+	color: #FFFFFF;
+	width:0%;
+	-webkit-transition: width .3s;
+	-moz-transition: width .3s;
+	transition: width .3s;
+}
+#progress-div {
+	float:left;
+	width:500px;
+	border:#ff6347 1px solid;
+	padding: 5px 0px;
+	margin-top: 15px;
+	margin-left: 10px;
+	/*/margin:10px 10px;*/
+	border-radius:4px;
+	text-align:center;
+}
+
+
+.file-btn {
+  width : 180px;
+  margin:10px 10px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #ff6347;
+  padding: 10px 20px 10px 20px;
+  border: solid #ff6347 2px;
+  text-decoration: none;
+}
+
+.file-btn:hover {
+  color: #ff6347;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+#fileUploadButDiv{
+	clear:both;
+	float:left;
+	width:200px;
+	margin-left: 2px;
+}
+
+#fileSelectDiv{
+	float:left;
+	width:200px;
+}
+
+#fileDetailDiv{
+	float:left;
+	width:550px;
+	height:50px;
+	font-size: 25px;
+	text-align: center;
+	padding-top: 10px;
+}
+
