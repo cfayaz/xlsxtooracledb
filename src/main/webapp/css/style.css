@@ -1,107 +1,341 @@
 @font-face {
-    font-family: Neuropol;
-    src: url('neuropol.ttf');
-}
-header {
-    height:90px;
-    background:tomato;
-    border:1px solid #CCC;
-    width:100%;
-    margin:0px auto;
+	font-family: Neuropol;
+	src: url('neuropol.ttf');
 }
 
-header h1{
-	font-size:50;
+header {
+	height: 90px;
+	background: tomato;
+	border: 1px solid #CCC;
+	width: 100%;
+	margin: 0px auto;
+}
+
+header h1 {
+	font-size: 50;
 	font-family: Neuropol;
 	text-align: center;
 	color: white;
 }
-body{
-	color: #ff6347;
 
+body {
+	color: #ff6347;
+	font-family: Arial;
 }
-.fileBox{
-	
-	width:750px;
+
+hr {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border: #ff6347 1px solid;
+	background: #ff6347;
+}
+
+.fileBox {
+	width: 750px;
 	height: 250px;
 	margin: auto;
 	margin-top: 15px;
-	border:2px solid #ff6347;
+	border: 5px solid #ff6347; //
 	padding-left: 3px;
+	padding: 0px 30px 0px 30px;
 	text-align: center;
 	font-size: 25px;
 }
 
 input[type="file"]#fileUploadBox {
-  /* Note: display:none on the input won't trigger the click event in WebKit.
+	/* Note: display:none on the input won't trigger the click event in WebKit.
      Setting visibility to hidden and width 0 works.*/
-  visibility: hidden;
-  width: 0;
-  height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
 }
 
-#progress-bar {	
-
+#progress-bar {
 	background-color: #ff6347;
-	height:20px;
+	height: 20px;
 	color: #FFFFFF;
-	width:0%;
+	width: 0%;
 	-webkit-transition: width .3s;
 	-moz-transition: width .3s;
 	transition: width .3s;
 }
+
 #progress-div {
-	float:left;
-	width:500px;
-	border:#ff6347 1px solid;
+	float: left;
+	width: 500px;
+	border: #ff6347 1px solid;
 	padding: 5px 0px;
 	margin-top: 15px;
 	margin-left: 10px;
 	/*/margin:10px 10px;*/
-	border-radius:4px;
-	text-align:center;
+	border-radius: 0px;
+	text-align: center;
 }
 
-
 .file-btn {
-  width : 180px;
-  margin:10px 10px;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: #ff6347;
-  padding: 10px 20px 10px 20px;
-  border: solid #ff6347 2px;
-  text-decoration: none;
+	width: 180px;
+	margin: 10px 10px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	color: #ffffff;
+	font-size: 20px;
+	background: #ff6347;
+	padding: 10px 20px 10px 20px;
+	border: solid #ff6347 2px;
+	text-decoration: none;
 }
 
 .file-btn:hover {
-  color: #ff6347;
-  background: #ffffff;
-  text-decoration: none;
+	color: #ff6347;
+	background: #ffffff;
+	text-decoration: none;
 }
 
-#fileUploadButDiv{
-	clear:both;
-	float:left;
-	width:200px;
+#fileUploadButDiv {
+	clear: both;
+	float: left;
+	width: 200px;
 	margin-left: 2px;
 }
 
-#fileSelectDiv{
-	float:left;
-	width:200px;
+#fileSelectDiv {
+	float: left;
+	width: 200px;
 }
 
-#fileDetailDiv{
-	float:left;
-	width:550px;
-	height:50px;
+#fileDetailDiv {
+	float: left;
+	width: 550px;
+	height: 50px;
 	font-size: 25px;
 	text-align: center;
 	padding-top: 10px;
 }
 
+.tab-panels {
+	width: 820px;
+	height: 250px;
+	margin: auto;
+	margin-top: 15px;
+	padding: 10px 30px 10px 30px;
+	font-size: 20px;
+}
+
+.tab-panels ul {
+	margin: 0;
+	padding: 0;
+}
+
+.tab-panels ul li {
+	width: 180px;
+	list-style-type: none;
+	display: inline-block;
+	background: #ff6347;
+	margin: 0; //
+	padding: 3px 10px;
+	padding: 10px 20px 10px 20px;
+	color: #fff;
+	font-weight: 200;
+	cursor: pointer;
+	border-radius: 0px;
+	text-align: center;
+}
+
+.tab-panels ul li:hover {
+	color: #fff;
+	background: white;
+	color: #ff6347;
+}
+
+.tab-panels ul li.active {
+	color: #fff;
+	background: #ff6347;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #ff6347;
+}
+
+.tab-panels .panel {
+	display: none;
+	background: white;
+	padding: 30px;
+	border-radius: 0px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #ff6347;
+}
+
+.tab-panels .panel.active {
+	display: block;
+}
+
+#sheet-panel .cell-item {
+	display: block;
+}
+
+#sheet-panel .cell-item th {
+	width: 330px;
+	text-align: center;
+}
+
+#sheet-panel .cell-item td {
+	width: 330px;
+}
+
+#sheet-panel .cell-item td input {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff6347;
+}
+
+.table-input {
+	width: 15em; //
+	height: 25px;
+	font-size: 24px;
+	margin: 5px 5px 5px 55px;
+	padding: 3px 5px 3px 5px;
+	color: #ff6347;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff6347;
+}
+
+label {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input[type=checkbox].css-checkbox {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+input[type=checkbox].css-checkbox+label.css-label {
+	padding-left: 20px;
+	height: 15px;
+	display: inline-block;
+	line-height: 15px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 24px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+input[type=checkbox].css-checkbox:checked+label.css-label {
+	background-position: 0 -15px;
+}
+
+.lite-orange-check {
+	background-image: url(lite-orange-check.png);
+}
+
+input[type=checkbox].css-checkbox.med+label.css-label.med {
+	padding-left: 22px;
+	height: 17px;
+	display: inline-block;
+	line-height: 17px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 24px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+input[type=checkbox].css-checkbox.med:checked+label.css-label.med {
+	background-position: 0 -17px;
+}
+
+input[type=checkbox].css-checkbox.sme+label.css-label.sme {
+	padding-left: 22px;
+	height: 16px;
+	display: inline-block;
+	line-height: 16px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 24px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+input[type=checkbox].css-checkbox.sme:checked+label.css-label.sme {
+	background-position: 0 -16px;
+}
+
+input[type=checkbox].css-checkbox.lrg+label.css-label.lrg {
+	padding-left: 22px;
+	height: 20px;
+	display: inline-block;
+	line-height: 20px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 15px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+input[type=checkbox].css-checkbox.lrg:checked+label.css-label.lrg {
+	background-position: 0 -20px;
+}
+
+.db-input {
+	width: 6em; //
+	height: 25px;
+	font-size: 24px;
+	margin: 5px 5px 5px 55px;
+	padding: 3px 5px 3px 5px;
+	color: #ff6347;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff6347;
+}
+
+#conn-names{
+	width: 15em; //
+	height: 25px;
+	font-size: 24px;
+	margin: 5px 5px 5px 55px;
+	padding: 3px 5px 3px 5px;
+	color: #ff6347;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ff6347;
+}
+
+#conn-cont {
+  width: 100px; 
+  height: 50px; 
+  position: relative;
+}
+
+#navi,
+#infoi {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#infoi {
+  z-index: 10;
+  margin: 15px 5px 5px 310px;
+  pointer-events:none;
+  
+}
+#infoi img{
+	float:right;
+}

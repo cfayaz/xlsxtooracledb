@@ -1,21 +1,23 @@
 package com.fayaz.xcel.logicallayer;
 
 
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Properties;
+
 
 //import org.apache.log4j.Logger;
 //import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.xssf.model.SharedStringsTable;
 import org.apache.poi.xssf.usermodel.XSSFRichTextString;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class XLSXSheetHandler extends DefaultHandler {
+	
+	static Logger logger = LoggerFactory.getLogger(XLSXSheetHandler.class);
 
 	private SharedStringsTable sst;
 	private String lastContents = "";

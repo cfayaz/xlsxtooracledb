@@ -15,6 +15,8 @@ import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xssf.eventusermodel.XSSFReader;
 import org.apache.poi.xssf.model.SharedStringsTable;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -22,6 +24,8 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 public class XLSXHandler implements BaseHandler{
+	
+	static Logger logger = LoggerFactory.getLogger(XLSXHandler.class);
 	
 	private static final String SAX_PARSER_DRIVER = "org.apache.xerces.parsers.SAXParser";
 	
@@ -31,6 +35,7 @@ public class XLSXHandler implements BaseHandler{
 	private XMLReader workBookParser;
 	private XSSFReader reader;
 	private boolean sheetRelIdMapStatus = false;
+	private boolean sheetPopulatedFlag =false;
 	private String file = "D:\\Backup From Old Lap\\Folders\\xlsxtodb_test_files\\export.xlsx";
 	
 	public XLSXHandler(String file) {
@@ -43,16 +48,17 @@ public class XLSXHandler implements BaseHandler{
 			workBookParser = fetchWorkBookParser();
 		} catch (InvalidFormatException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		} catch (OpenXML4JException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		} catch (SAXException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 		
 	}
@@ -81,15 +87,18 @@ public class XLSXHandler implements BaseHandler{
 				sheetList.add(workBook.getSheetName(i));
 			}
 			workBook.close();
+			sheetPopulatedFlag = true;
 
 		} catch (IOException e) {
 
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 	}
 	
 	public List<String> getSheetNames() {
-		if(sheetList== null){
+		logger.info("Inside getSheetNames");
+		logger.info("File to Process :"+file);
+		if(!sheetPopulatedFlag){
 			if(file!=null)
 				setSheetNames();
 			else{
@@ -112,13 +121,13 @@ public class XLSXHandler implements BaseHandler{
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		} catch (SAXException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		} catch (InvalidFormatException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 
 	}
@@ -149,13 +158,13 @@ public class XLSXHandler implements BaseHandler{
 			i.close();
 		} catch (InvalidFormatException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		} catch (SAXException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 
 	}

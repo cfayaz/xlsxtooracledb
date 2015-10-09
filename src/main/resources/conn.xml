@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections>
+	<connection name="zipdb-Ajin" type="ORCL">
+		<host>blr2213392.idc.oracle.com</host>
+		<sid>blr22133</sid>
+		<port>1522</port>
+		<user>fusion</user>
+		<pwd>fusion</pwd>
+	</connection>
+	<connection name="zipdb-Jojo" type="ORCL">
+		<host>blr2433664.idc.oracle.com</host>
+		<sid>blr24336</sid>
+		<port>1522</port>
+		<user>fusion</user>
+		<pwd>fusion</pwd>
+	</connection>
+	<connection name="corehr-dev" type="ORCL">
+		<host>slcao718.us.oracle.com</host>
+		<sid>ems1616</sid>
+		<port>1538</port>
+		<user>fusion</user>
+		<pwd>fusion</pwd>
+	</connection>
+</connections>
